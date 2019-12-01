@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Login Form Design></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+<body>
+
+	<div class="loginbox">
+	<img scr="tce.png" class="tce">	
+ 
+	<h1>ADMIN PAGE</h1>
+<script>
+$(document).ready(function(){
+$("input").focus(function(){
+$(this).css("background-color","blue");
+$(this).css("color","orange");
+$(this).css("font-size","20px");
+});
+$("input").blur(function(){
+$(this).css("background-color","yellow");
+$(this).css("color","black");
+$(this).css("font-size","30px");
+});
+});
+</script>
+	<form name="login" onSubmit="return validation()">
+		<p>UserName</p>
+		<input type="text" name="uname" Placeholder="Enter Username">
+		<p>Password</p>
+		<input type="password" name="pwd" Placeholder="Enter Password">
+		<input type="submit" name="" value="Login">
+		<a href="#">Lost your password?</a><br>
+		<a href="#">Don"t have an account?></a>
+	<a href="homepage.html">
+	<div id="Layer5"></div>
+	</a>
+<script>
+function validation()
+{
+var uname=document.login.uname.value;
+var pwd=document.login.pwd.value;
+if(uname=="ajith" && pwd=="kumar28")
+{
+window.open("display.php");
+//<body background="yellow">
+//window.open("transition.html");
+
+}
+else
+{
+alert("User Name and Password is not matched");
+return;
+}
+if(pwd.length<6 || pwd.length>12)
+{
+alert("password must be 6 to 12 charcters");
+return;
+}
+var str=uname.slice(0,1);
+if(uname.slice(0,1)=="_"||uname.slice(0,1)=="@"||str.match(/[0-9]/g)!=null)
+{
+alert("username should not start with _ @ and number");
+return;
+}
+
+}
+</script>
+	  </form>
+</div>
+    
+</body>
+</head>
+</html>
